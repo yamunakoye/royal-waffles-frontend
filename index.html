@@ -3,493 +3,222 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Royal Waffles & Juices – Kukatpally, Hyderabad</title>
+<title>Royal Waffles & Juices – Kukatpally</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --royal: #2D1B69;
-    --gold: #F5A623;
-    --pink: #FF3CAC;
-    --teal: #00C9A7;
-    --cream: #FFF8F0;
-    --dark: #1A0F3C;
-    --text: #3D2A6B;
-  }
+:root{--royal:#2D1B69;--gold:#F5A623;--pink:#FF3CAC;--teal:#00C9A7;--cream:#FFF8F0;--dark:#1A0F3C;--text:#3D2A6B}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(45,27,105,0.95);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:14px 48px;box-shadow:0 2px 24px rgba(45,27,105,0.4)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold);display:flex;align-items:center;gap:10px}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.85);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-right{display:flex;gap:12px;align-items:center}
+.cart-btn{background:linear-gradient(135deg,var(--gold),var(--pink));color:white;border:none;padding:10px 20px;border-radius:50px;font-family:'Poppins',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;position:relative;transition:transform .2s}
+.cart-btn:hover{transform:translateY(-2px)}
+.cart-count{position:absolute;top:-6px;right:-6px;background:white;color:var(--royal);width:20px;height:20px;border-radius:50%;font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.admin-btn{background:transparent;border:2px solid rgba(255,255,255,0.3);color:white;padding:8px 18px;border-radius:50px;font-family:'Poppins',sans-serif;font-size:.85rem;cursor:pointer;transition:all .2s}
+.admin-btn:hover{border-color:var(--gold);color:var(--gold)}
 
-  html { scroll-behavior: smooth; }
+.hero{min-height:100vh;background:linear-gradient(135deg,var(--dark) 0%,var(--royal) 50%,#4A1A6E 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:80px}
+.waffle-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(245,166,35,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(245,166,35,.08) 1px,transparent 1px);background-size:48px 48px;animation:gridShift 8s linear infinite}
+@keyframes gridShift{0%{background-position:0 0}100%{background-position:48px 48px}}
+.particles{position:absolute;inset:0;pointer-events:none}
+.particle{position:absolute;font-size:1.8rem;animation:floatUp linear infinite;opacity:0}
+@keyframes floatUp{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translateY(-10vh) rotate(360deg);opacity:0}}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:800px;padding:0 24px}
+.hero-badge{display:inline-block;background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.4);color:var(--gold);padding:6px 20px;border-radius:50px;font-size:.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;animation:fadeInDown .8s ease both}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,6rem);line-height:1.05;color:white;animation:fadeInUp 1s ease .2s both}
+.hero h1 .gold{color:var(--gold)}.hero h1 .pink{color:var(--pink)}
+.hero-sub{font-size:1.15rem;color:rgba(255,255,255,.75);margin-top:20px;line-height:1.7;animation:fadeInUp 1s ease .4s both}
+.hero-stars{margin-top:20px;animation:fadeInUp 1s ease .5s both;font-size:1.5rem;color:var(--gold)}
+.hero-stars span{color:rgba(255,255,255,.7);font-size:.9rem;margin-left:8px;vertical-align:middle}
+.hero-btns{display:flex;gap:16px;justify-content:center;margin-top:36px;flex-wrap:wrap;animation:fadeInUp 1s ease .6s both}
+.btn-primary{background:linear-gradient(135deg,var(--gold) 0%,#FF8C00 100%);color:var(--dark);border:none;padding:16px 36px;border-radius:50px;font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s;text-decoration:none;display:inline-block}
+.btn-primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 32px rgba(245,166,35,.6)}
+.btn-secondary{background:transparent;color:white;border:2px solid rgba(255,255,255,.4);padding:14px 36px;border-radius:50px;font-family:'Poppins',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-secondary:hover{border-color:var(--pink);color:var(--pink)}
+.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.4);font-size:.8rem;text-align:center;animation:bounce 2s ease-in-out infinite}
+.scroll-hint::after{content:"▼";display:block;font-size:1.2rem}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
 
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--cream);
-    color: var(--text);
-    overflow-x: hidden;
-  }
+.section{padding:96px 48px;max-width:1200px;margin:0 auto}
+.section-label{font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--pink);margin-bottom:12px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);color:var(--royal);line-height:1.15;margin-bottom:16px}
+.section-sub{color:#6B5B9E;font-size:1.05rem;line-height:1.7;max-width:540px}
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; width: 100%; z-index: 100;
-    background: rgba(45, 27, 105, 0.95);
-    backdrop-filter: blur(12px);
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 14px 48px;
-    box-shadow: 0 2px 24px rgba(45,27,105,0.4);
-  }
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem; color: var(--gold);
-    display: flex; align-items: center; gap: 10px;
-  }
-  .nav-logo span { font-size: 1.6rem; }
-  .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a {
-    color: rgba(255,255,255,0.85); text-decoration: none;
-    font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--gold); }
-  .nav-cta {
-    background: linear-gradient(135deg, var(--gold), var(--pink));
-    color: white; border: none; padding: 10px 24px;
-    border-radius: 50px; font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem; font-weight: 600; cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,60,172,0.5); }
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:56px}
+.feature-card{background:white;border-radius:24px;padding:36px 28px;box-shadow:0 4px 24px rgba(45,27,105,.08);border:1px solid rgba(45,27,105,.06);transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden}
+.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--pink))}
+.feature-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(45,27,105,.15)}
+.feature-icon{font-size:2.4rem;margin-bottom:16px}
+.feature-card h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--royal);margin-bottom:10px}
+.feature-card p{color:#7A6EA0;font-size:.9rem;line-height:1.6}
 
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: linear-gradient(135deg, var(--dark) 0%, var(--royal) 50%, #4A1A6E 100%);
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden; padding-top: 80px;
-  }
+.menu-section{background:linear-gradient(160deg,var(--royal) 0%,#4A1A6E 100%);padding:96px 48px}
+.menu-section .section-label{color:var(--gold)}
+.menu-section .section-title{color:white}
+.menu-section .section-sub{color:rgba(255,255,255,.7)}
+.menu-tabs{display:flex;gap:12px;margin-top:40px;flex-wrap:wrap}
+.tab{padding:10px 24px;border-radius:50px;font-family:'Poppins',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;border:2px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);background:transparent;transition:all .2s}
+.tab.active,.tab:hover{background:var(--gold);border-color:var(--gold);color:var(--dark)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-top:36px}
+.menu-card{background:rgba(255,255,255,.08);border-radius:20px;border:1px solid rgba(255,255,255,.12);padding:28px;backdrop-filter:blur(8px);transition:transform .3s,background .3s;cursor:pointer;position:relative}
+.menu-card:hover{transform:translateY(-4px) scale(1.02);background:rgba(255,255,255,.14)}
+.menu-emoji{font-size:3rem;margin-bottom:14px}
+.menu-card h4{font-family:'Playfair Display',serif;font-size:1.15rem;color:white;margin-bottom:6px}
+.menu-card p{color:rgba(255,255,255,.6);font-size:.85rem;margin-bottom:14px}
+.menu-price{color:var(--gold);font-weight:700;font-size:1.1rem}
+.bestseller{background:linear-gradient(135deg,var(--pink),#FF8C00);color:white;font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:50px;display:inline-block;margin-bottom:10px}
+.add-to-cart{position:absolute;bottom:20px;right:20px;background:var(--gold);border:none;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s}
+.add-to-cart:hover{transform:scale(1.15);box-shadow:0 4px 12px rgba(245,166,35,.6)}
 
-  /* Waffle grid background */
-  .waffle-bg {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(245,166,35,0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(245,166,35,0.08) 1px, transparent 1px);
-    background-size: 48px 48px;
-    animation: gridShift 8s linear infinite;
-  }
-  @keyframes gridShift {
-    0% { background-position: 0 0; }
-    100% { background-position: 48px 48px; }
-  }
+/* CART SIDEBAR */
+.cart-overlay{position:fixed;inset:0;background:rgba(26,15,60,.7);z-index:200;display:none;backdrop-filter:blur(4px)}
+.cart-overlay.open{display:block}
+.cart-sidebar{position:fixed;right:0;top:0;height:100vh;width:400px;max-width:95vw;background:white;z-index:201;display:flex;flex-direction:column;box-shadow:-8px 0 40px rgba(45,27,105,.2);transform:translateX(100%);transition:transform .3s ease}
+.cart-sidebar.open{transform:translateX(0)}
+.cart-header{background:linear-gradient(135deg,var(--royal),#4A1A6E);padding:20px 24px;display:flex;align-items:center;justify-content:space-between}
+.cart-header h3{color:white;font-family:'Playfair Display',serif;font-size:1.3rem}
+.cart-close{background:rgba(255,255,255,.15);border:none;color:white;width:34px;height:34px;border-radius:50%;font-size:1.1rem;cursor:pointer}
+.cart-items{flex:1;overflow-y:auto;padding:16px}
+.cart-item{display:flex;align-items:center;gap:12px;padding:14px;background:#FAFAF9;border-radius:16px;margin-bottom:12px;border:1px solid rgba(45,27,105,.06)}
+.cart-item-emoji{font-size:2rem;flex-shrink:0}
+.cart-item-info{flex:1}
+.cart-item-info h5{font-size:.9rem;color:var(--royal);font-weight:600}
+.cart-item-info p{font-size:.8rem;color:var(--gold);font-weight:700}
+.cart-item-qty{display:flex;align-items:center;gap:8px}
+.qty-btn{background:var(--royal);color:white;border:none;width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center}
+.qty-num{font-weight:700;color:var(--royal);min-width:20px;text-align:center}
+.cart-empty{text-align:center;padding:60px 20px;color:#9A8ABE}
+.cart-empty div{font-size:3rem;margin-bottom:12px}
+.cart-footer{padding:20px 24px;border-top:1px solid rgba(45,27,105,.08)}
+.cart-total{display:flex;justify-content:space-between;margin-bottom:16px;font-weight:700;font-size:1.1rem;color:var(--royal)}
+.checkout-btn{width:100%;background:linear-gradient(135deg,var(--royal),var(--pink));color:white;border:none;padding:16px;border-radius:50px;font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:transform .2s}
+.checkout-btn:hover{transform:translateY(-2px)}
 
-  /* floating emoji particles */
-  .particles { position: absolute; inset: 0; pointer-events: none; }
-  .particle {
-    position: absolute;
-    font-size: 1.8rem;
-    animation: floatUp linear infinite;
-    opacity: 0;
-  }
-  @keyframes floatUp {
-    0%   { transform: translateY(100vh) rotate(0deg);   opacity: 0; }
-    10%  { opacity: 0.6; }
-    90%  { opacity: 0.6; }
-    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
-  }
+/* ORDER MODAL */
+.modal-overlay{position:fixed;inset:0;z-index:300;background:rgba(26,15,60,.75);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-box{background:white;border-radius:28px;max-width:460px;width:100%;padding:40px 36px;position:relative;box-shadow:0 24px 80px rgba(45,27,105,.3);animation:modalPop .3s cubic-bezier(.34,1.56,.64,1);max-height:90vh;overflow-y:auto}
+@keyframes modalPop{from{opacity:0;transform:scale(.85) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-close{position:absolute;top:16px;right:20px;background:rgba(45,27,105,.08);border:none;width:32px;height:32px;border-radius:50%;font-size:1rem;cursor:pointer;color:var(--royal);display:flex;align-items:center;justify-content:center}
+.modal-box h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--royal);margin-bottom:20px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.85rem;font-weight:600;color:var(--royal);margin-bottom:6px}
+.form-group input,.form-group textarea{width:100%;border:1.5px solid rgba(45,27,105,.15);border-radius:12px;padding:12px 16px;font-family:'Poppins',sans-serif;font-size:.9rem;color:var(--text);outline:none;transition:border-color .2s}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--royal)}
+.form-group textarea{resize:vertical;min-height:80px}
+.order-summary{background:#FAFAF9;border-radius:16px;padding:16px;margin-bottom:20px}
+.order-summary h4{font-size:.9rem;font-weight:700;color:var(--royal);margin-bottom:10px}
+.order-summary-item{display:flex;justify-content:space-between;font-size:.85rem;color:#7A6EA0;margin-bottom:4px}
+.order-total-row{display:flex;justify-content:space-between;font-weight:700;color:var(--royal);margin-top:8px;padding-top:8px;border-top:1px solid rgba(45,27,105,.1)}
+.place-order-btn{width:100%;background:linear-gradient(135deg,var(--gold),var(--pink));color:white;border:none;padding:16px;border-radius:50px;font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:transform .2s}
+.place-order-btn:hover{transform:translateY(-2px)}
+.place-order-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
 
-  .hero-content {
-    position: relative; z-index: 2;
-    text-align: center; max-width: 800px; padding: 0 24px;
-  }
-  .hero-badge {
-    display: inline-block;
-    background: rgba(245,166,35,0.15);
-    border: 1px solid rgba(245,166,35,0.4);
-    color: var(--gold);
-    padding: 6px 20px; border-radius: 50px;
-    font-size: 0.8rem; font-weight: 600; letter-spacing: 2px;
-    text-transform: uppercase; margin-bottom: 24px;
-    animation: fadeInDown 0.8s ease both;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 8vw, 6rem);
-    line-height: 1.05;
-    color: white;
-    animation: fadeInUp 1s ease 0.2s both;
-  }
-  .hero h1 .gold { color: var(--gold); }
-  .hero h1 .pink { color: var(--pink); }
-  .hero-sub {
-    font-size: 1.15rem; color: rgba(255,255,255,0.75);
-    margin-top: 20px; line-height: 1.7;
-    animation: fadeInUp 1s ease 0.4s both;
-  }
-  .hero-stars {
-    margin-top: 20px;
-    animation: fadeInUp 1s ease 0.5s both;
-    font-size: 1.5rem; color: var(--gold);
-  }
-  .hero-stars span { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-left: 8px; vertical-align: middle; }
-  .hero-btns {
-    display: flex; gap: 16px; justify-content: center; margin-top: 36px;
-    flex-wrap: wrap;
-    animation: fadeInUp 1s ease 0.6s both;
-  }
-  .btn-primary {
-    background: linear-gradient(135deg, var(--gold) 0%, #FF8C00 100%);
-    color: var(--dark); border: none; padding: 16px 36px;
-    border-radius: 50px; font-family: 'Poppins', sans-serif;
-    font-size: 1rem; font-weight: 700; cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    text-decoration: none; display: inline-block;
-  }
-  .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 32px rgba(245,166,35,0.6); }
-  .btn-secondary {
-    background: transparent;
-    color: white; border: 2px solid rgba(255,255,255,0.4); padding: 14px 36px;
-    border-radius: 50px; font-family: 'Poppins', sans-serif;
-    font-size: 1rem; font-weight: 600; cursor: pointer;
-    transition: all 0.2s;
-    text-decoration: none; display: inline-block;
-  }
-  .btn-secondary:hover { border-color: var(--pink); color: var(--pink); }
+/* SUCCESS */
+.success-box{text-align:center;padding:20px 0}
+.success-box .success-icon{font-size:4rem;margin-bottom:16px}
+.success-box h3{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--royal);margin-bottom:10px}
+.success-box p{color:#7A6EA0;line-height:1.6;margin-bottom:6px}
+.success-box .order-id{color:var(--gold);font-weight:700;font-size:1.1rem;margin:12px 0}
 
-  /* scroll arrow */
-  .scroll-hint {
-    position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
-    color: rgba(255,255,255,0.4); font-size: 0.8rem; text-align: center;
-    animation: bounce 2s ease-in-out infinite;
-  }
-  .scroll-hint::after { content: "▼"; display: block; font-size: 1.2rem; }
-  @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+/* ADMIN */
+.admin-panel{position:fixed;inset:0;z-index:400;background:var(--dark);display:none;flex-direction:column;overflow:hidden}
+.admin-panel.open{display:flex}
+.admin-nav{background:rgba(255,255,255,.05);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.1)}
+.admin-nav h2{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.4rem}
+.admin-close{background:rgba(255,255,255,.1);border:none;color:white;padding:8px 20px;border-radius:50px;cursor:pointer;font-family:'Poppins',sans-serif}
+.admin-body{flex:1;overflow-y:auto;padding:24px}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:32px}
+.stat-card{background:rgba(255,255,255,.06);border-radius:16px;padding:24px;border:1px solid rgba(255,255,255,.08);text-align:center}
+.stat-value{font-size:2rem;font-weight:700;color:var(--gold);margin-bottom:4px}
+.stat-label{color:rgba(255,255,255,.6);font-size:.85rem}
+.orders-table{background:rgba(255,255,255,.04);border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.orders-table-header{display:grid;grid-template-columns:1fr 1fr 2fr 1fr 1fr;gap:12px;padding:16px 20px;background:rgba(255,255,255,.06);font-size:.8rem;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px}
+.order-row{display:grid;grid-template-columns:1fr 1fr 2fr 1fr 1fr;gap:12px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.05);align-items:center}
+.order-row:last-child{border-bottom:none}
+.order-row:hover{background:rgba(255,255,255,.04)}
+.order-name{color:white;font-weight:600;font-size:.9rem}
+.order-phone{color:rgba(255,255,255,.6);font-size:.85rem}
+.order-items-text{color:rgba(255,255,255,.7);font-size:.82rem}
+.order-amount{color:var(--gold);font-weight:700}
+.status-badge{padding:4px 12px;border-radius:50px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;border:none;font-family:'Poppins',sans-serif}
+.status-placed{background:rgba(245,166,35,.2);color:var(--gold)}
+.status-preparing{background:rgba(0,201,167,.2);color:var(--teal)}
+.status-ready{background:rgba(255,60,172,.2);color:var(--pink)}
+.status-delivered{background:rgba(100,200,100,.2);color:#90EE90}
+.admin-refresh{background:rgba(255,255,255,.1);border:none;color:white;padding:8px 20px;border-radius:50px;cursor:pointer;font-family:'Poppins',sans-serif;margin-bottom:16px}
+.no-orders{text-align:center;padding:60px;color:rgba(255,255,255,.4)}
 
-  @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+/* REVIEWS */
+.reviews-strip{background:var(--cream);padding:80px 0;overflow:hidden}
+.reviews-track{display:flex;gap:24px;animation:scrollLeft 30s linear infinite;width:max-content}
+.reviews-strip:hover .reviews-track{animation-play-state:paused}
+@keyframes scrollLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.review-card{background:white;border-radius:20px;padding:28px 32px;min-width:320px;max-width:340px;box-shadow:0 4px 20px rgba(45,27,105,.08);border:1px solid rgba(45,27,105,.06);flex-shrink:0}
+.review-stars{color:var(--gold);font-size:1rem;margin-bottom:12px}
+.review-text{color:#5A4A7E;font-size:.9rem;line-height:1.65;font-style:italic;margin-bottom:16px}
+.review-author{display:flex;align-items:center;gap:12px}
+.review-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--pink));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:1rem}
+.review-name{font-weight:600;color:var(--royal);font-size:.9rem}
+.review-date{color:#9A8ABE;font-size:.75rem}
 
-  /* ── WHY US ── */
-  .section { padding: 96px 48px; max-width: 1200px; margin: 0 auto; }
-  .section-label {
-    font-size: 0.75rem; font-weight: 700; letter-spacing: 3px;
-    text-transform: uppercase; color: var(--pink); margin-bottom: 12px;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    color: var(--royal); line-height: 1.15; margin-bottom: 16px;
-  }
-  .section-sub { color: #6B5B9E; font-size: 1.05rem; line-height: 1.7; max-width: 540px; }
+/* LOCATION */
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.info-row{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+.info-icon{width:44px;height:44px;border-radius:12px;flex-shrink:0;background:linear-gradient(135deg,var(--gold),var(--pink));display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.map-embed{border-radius:24px;overflow:hidden;box-shadow:0 8px 40px rgba(45,27,105,.15);aspect-ratio:4/3;background:#e8e0f5;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;border:2px solid rgba(245,166,35,.3)}
+.map-btn{background:linear-gradient(135deg,var(--royal),#4A1A6E);color:white;border:none;padding:12px 28px;border-radius:50px;font-family:'Poppins',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .2s,box-shadow .2s;margin-top:8px}
+.map-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,27,105,.4)}
 
-  .features-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 28px; margin-top: 56px;
-  }
-  .feature-card {
-    background: white; border-radius: 24px; padding: 36px 28px;
-    box-shadow: 0 4px 24px rgba(45,27,105,0.08);
-    border: 1px solid rgba(45,27,105,0.06);
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative; overflow: hidden;
-  }
-  .feature-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-    background: linear-gradient(90deg, var(--gold), var(--pink));
-  }
-  .feature-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(45,27,105,0.15); }
-  .feature-icon { font-size: 2.4rem; margin-bottom: 16px; }
-  .feature-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--royal); margin-bottom: 10px; }
-  .feature-card p { color: #7A6EA0; font-size: 0.9rem; line-height: 1.6; }
+footer{background:var(--dark);padding:56px 48px 36px;text-align:center}
+.footer-logo{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);margin-bottom:12px}
+footer p{color:rgba(255,255,255,.5);font-size:.85rem;margin-bottom:6px}
+.footer-divider{width:60px;height:3px;background:linear-gradient(90deg,var(--gold),var(--pink));margin:24px auto;border-radius:2px}
 
-  /* ── MENU ── */
-  .menu-section {
-    background: linear-gradient(160deg, var(--royal) 0%, #4A1A6E 100%);
-    padding: 96px 48px;
-  }
-  .menu-section .section-label { color: var(--gold); }
-  .menu-section .section-title { color: white; }
-  .menu-section .section-sub { color: rgba(255,255,255,0.7); }
+#chat-btn{position:fixed;bottom:28px;right:28px;z-index:150;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--royal));border:none;cursor:pointer;box-shadow:0 6px 24px rgba(255,60,172,.5);font-size:1.6rem;display:flex;align-items:center;justify-content:center;transition:transform .25s;animation:chatPulse 3s ease-in-out infinite}
+@keyframes chatPulse{0%,100%{box-shadow:0 6px 24px rgba(255,60,172,.5)}50%{box-shadow:0 6px 40px rgba(255,60,172,.8)}}
+#chat-btn:hover{transform:scale(1.1)}
+#chat-window{position:fixed;bottom:104px;right:28px;z-index:150;width:360px;max-width:calc(100vw - 40px);background:white;border-radius:24px;box-shadow:0 16px 60px rgba(45,27,105,.2);display:none;flex-direction:column;overflow:hidden;border:1px solid rgba(45,27,105,.1);height:500px}
+#chat-window.open{display:flex;animation:chatSlideIn .3s ease}
+@keyframes chatSlideIn{from{opacity:0;transform:translateY(20px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+.chat-header{background:linear-gradient(135deg,var(--royal),#4A1A6E);padding:18px 20px;display:flex;align-items:center;gap:12px}
+.chat-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--pink));display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.chat-header-info h4{color:white;font-size:.95rem;font-weight:600}
+.chat-header-info p{color:rgba(255,255,255,.6);font-size:.75rem}
+#chat-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;background:#FAFAF9}
+.msg{display:flex;gap:8px;align-items:flex-end;max-width:85%}
+.msg.bot{align-self:flex-start}.msg.user{align-self:flex-end;flex-direction:row-reverse}
+.msg-bubble{padding:10px 14px;border-radius:18px;font-size:.875rem;line-height:1.5}
+.bot .msg-bubble{background:white;color:var(--text);border:1px solid rgba(45,27,105,.1);border-bottom-left-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.user .msg-bubble{background:linear-gradient(135deg,var(--royal),#4A1A6E);color:white;border-bottom-right-radius:4px}
+.msg-bot-icon{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--pink));display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.typing{display:flex;gap:4px;align-items:center;padding:12px 16px}
+.typing span{width:7px;height:7px;border-radius:50%;background:#9A8ABE;animation:typingBounce 1.2s ease-in-out infinite}
+.typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+@keyframes typingBounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
+.chat-quick{display:flex;gap:8px;padding:10px 16px 0;flex-wrap:wrap}
+.quick-chip{background:rgba(45,27,105,.07);border:1px solid rgba(45,27,105,.15);color:var(--royal);padding:6px 14px;border-radius:50px;font-size:.78rem;cursor:pointer;font-family:'Poppins',sans-serif;transition:all .15s}
+.quick-chip:hover{background:var(--royal);color:white}
+.chat-input-row{display:flex;gap:8px;padding:14px 16px;border-top:1px solid rgba(45,27,105,.08);background:white}
+#chat-input{flex:1;border:1.5px solid rgba(45,27,105,.15);border-radius:50px;padding:10px 16px;font-family:'Poppins',sans-serif;font-size:.875rem;color:var(--text);outline:none;transition:border-color .2s}
+#chat-input:focus{border-color:var(--royal)}
+#chat-send{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--royal),var(--pink));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:transform .2s}
+#chat-send:hover{transform:scale(1.1)}
 
-  .menu-tabs {
-    display: flex; gap: 12px; margin-top: 40px; flex-wrap: wrap;
-  }
-  .tab {
-    padding: 10px 24px; border-radius: 50px; font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem; font-weight: 600; cursor: pointer;
-    border: 2px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7);
-    background: transparent; transition: all 0.2s;
-  }
-  .tab.active, .tab:hover {
-    background: var(--gold); border-color: var(--gold); color: var(--dark);
-  }
-
-  .menu-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 24px; margin-top: 36px;
-  }
-  .menu-card {
-    background: rgba(255,255,255,0.08); border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.12);
-    padding: 28px; backdrop-filter: blur(8px);
-    transition: transform 0.3s, background 0.3s;
-    cursor: pointer;
-  }
-  .menu-card:hover { transform: translateY(-4px) scale(1.02); background: rgba(255,255,255,0.18); }
-  .menu-emoji { font-size: 3rem; margin-bottom: 14px; }
-  .menu-card h4 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: white; margin-bottom: 6px; }
-  .menu-card p { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 14px; }
-  .menu-price { color: var(--gold); font-weight: 700; font-size: 1.1rem; }
-  .bestseller {
-    background: linear-gradient(135deg, var(--pink), #FF8C00);
-    color: white; font-size: 0.7rem; font-weight: 700;
-    letter-spacing: 1px; text-transform: uppercase;
-    padding: 3px 10px; border-radius: 50px; display: inline-block; margin-bottom: 10px;
-  }
-
-  /* Modal */
-  .modal-overlay {
-    position: fixed; inset: 0; z-index: 1000;
-    background: rgba(26,15,60,0.75); backdrop-filter: blur(6px);
-    display: flex; align-items: center; justify-content: center;
-    padding: 20px;
-    animation: fadeIn 0.2s ease;
-  }
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-  .modal-box {
-    background: white; border-radius: 28px; max-width: 420px; width: 100%;
-    padding: 40px 36px; text-align: center; position: relative;
-    box-shadow: 0 24px 80px rgba(45,27,105,0.3);
-    animation: modalPop 0.3s cubic-bezier(0.34,1.56,0.64,1);
-  }
-  @keyframes modalPop { from { opacity:0; transform: scale(0.85) translateY(20px); } to { opacity:1; transform: scale(1) translateY(0); } }
-  .modal-close {
-    position: absolute; top: 16px; right: 20px;
-    background: rgba(45,27,105,0.08); border: none;
-    width: 32px; height: 32px; border-radius: 50%;
-    font-size: 1rem; cursor: pointer; color: var(--royal);
-    display: flex; align-items: center; justify-content: center;
-    transition: background 0.2s;
-  }
-  .modal-close:hover { background: rgba(45,27,105,0.15); }
-  .modal-emoji { font-size: 4rem; margin-bottom: 16px; }
-  .modal-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--pink), #FF8C00);
-    color: white; font-size: 0.7rem; font-weight: 700;
-    letter-spacing: 1px; text-transform: uppercase;
-    padding: 4px 14px; border-radius: 50px; margin-bottom: 14px;
-  }
-  .modal-box h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--royal); margin-bottom: 10px; }
-  .modal-box p { color: #7A6EA0; font-size: 0.95rem; line-height: 1.65; margin-bottom: 20px; }
-  .modal-price { font-size: 2rem; font-weight: 700; color: var(--gold); margin-bottom: 24px; }
-  .modal-btn {
-    background: linear-gradient(135deg, var(--royal), var(--pink));
-    color: white; border: none; padding: 14px 36px;
-    border-radius: 50px; font-family: 'Poppins', sans-serif;
-    font-size: 1rem; font-weight: 600; cursor: pointer;
-    width: 100%; transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .modal-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,60,172,0.4); }
-
-  /* ── REVIEWS ── */
-  .reviews-strip {
-    background: var(--cream); padding: 80px 0; overflow: hidden;
-  }
-  .reviews-track {
-    display: flex; gap: 24px;
-    animation: scrollLeft 25s linear infinite;
-    width: max-content;
-  }
-  .reviews-strip:hover .reviews-track { animation-play-state: paused; }
-  @keyframes scrollLeft {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-  }
-  .review-card {
-    background: white; border-radius: 20px; padding: 28px 32px;
-    min-width: 320px; max-width: 340px;
-    box-shadow: 0 4px 20px rgba(45,27,105,0.08);
-    border: 1px solid rgba(45,27,105,0.06);
-    flex-shrink: 0;
-  }
-  .review-stars { color: var(--gold); font-size: 1rem; margin-bottom: 12px; }
-  .review-text { color: #5A4A7E; font-size: 0.9rem; line-height: 1.65; font-style: italic; margin-bottom: 16px; }
-  .review-author { display: flex; align-items: center; gap: 12px; }
-  .review-avatar {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold), var(--pink));
-    display: flex; align-items: center; justify-content: center;
-    color: white; font-weight: 700; font-size: 1rem;
-  }
-  .review-name { font-weight: 600; color: var(--royal); font-size: 0.9rem; }
-  .review-date { color: #9A8ABE; font-size: 0.75rem; }
-
-  /* ── LOCATION ── */
-  .location-section { padding: 96px 48px; max-width: 1200px; margin: 0 auto; }
-  .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-  .location-info p { color: #7A6EA0; line-height: 1.7; margin-bottom: 12px; font-size: 0.95rem; }
-  .location-info strong { color: var(--royal); }
-  .info-row { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
-  .info-icon {
-    width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
-    background: linear-gradient(135deg, var(--gold), var(--pink));
-    display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
-  }
-  .map-embed {
-    border-radius: 24px; overflow: hidden;
-    box-shadow: 0 8px 40px rgba(45,27,105,0.15);
-    aspect-ratio: 4/3;
-    background: #e8e0f5;
-    display: flex; align-items: center; justify-content: center;
-    flex-direction: column; gap: 12px;
-    border: 2px solid rgba(245,166,35,0.3);
-  }
-  .map-embed-inner { font-size: 3rem; }
-  .map-embed p { color: var(--royal); font-weight: 600; font-size: 0.95rem; text-align: center; padding: 0 16px; }
-  .map-btn {
-    background: linear-gradient(135deg, var(--royal), #4A1A6E);
-    color: white; border: none; padding: 12px 28px;
-    border-radius: 50px; font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem; font-weight: 600; cursor: pointer;
-    text-decoration: none; display: inline-block;
-    transition: transform 0.2s, box-shadow 0.2s;
-    margin-top: 8px;
-  }
-  .map-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,27,105,0.4); }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--dark);
-    padding: 56px 48px 36px;
-    text-align: center;
-  }
-  .footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem; color: var(--gold); margin-bottom: 12px;
-  }
-  footer p { color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 6px; }
-  .footer-divider { width: 60px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--pink)); margin: 24px auto; border-radius: 2px; }
-
-  /* ── CHATBOT ── */
-  #chat-btn {
-    position: fixed; bottom: 28px; right: 28px; z-index: 999;
-    width: 60px; height: 60px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--pink), var(--royal));
-    border: none; cursor: pointer;
-    box-shadow: 0 6px 24px rgba(255,60,172,0.5);
-    font-size: 1.6rem; display: flex; align-items: center; justify-content: center;
-    transition: transform 0.25s, box-shadow 0.25s;
-    animation: chatPulse 3s ease-in-out infinite;
-  }
-  @keyframes chatPulse {
-    0%,100% { box-shadow: 0 6px 24px rgba(255,60,172,0.5); }
-    50% { box-shadow: 0 6px 40px rgba(255,60,172,0.8); }
-  }
-  #chat-btn:hover { transform: scale(1.1); }
-
-  #chat-window {
-    position: fixed; bottom: 104px; right: 28px; z-index: 999;
-    width: 360px; max-width: calc(100vw - 40px);
-    background: white; border-radius: 24px;
-    box-shadow: 0 16px 60px rgba(45,27,105,0.2);
-    display: none; flex-direction: column; overflow: hidden;
-    border: 1px solid rgba(45,27,105,0.1);
-    height: 500px;
-  }
-  #chat-window.open { display: flex; animation: chatSlideIn 0.3s ease; }
-  @keyframes chatSlideIn {
-    from { opacity: 0; transform: translateY(20px) scale(0.95); }
-    to   { opacity: 1; transform: translateY(0) scale(1); }
-  }
-
-  .chat-header {
-    background: linear-gradient(135deg, var(--royal), #4A1A6E);
-    padding: 18px 20px; display: flex; align-items: center; gap: 12px;
-  }
-  .chat-avatar {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold), var(--pink));
-    display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
-  }
-  .chat-header-info h4 { color: white; font-size: 0.95rem; font-weight: 600; }
-  .chat-header-info p { color: rgba(255,255,255,0.6); font-size: 0.75rem; }
-  .chat-online { display: flex; align-items: center; gap: 5px; }
-  .chat-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); }
-
-  #chat-msgs {
-    flex: 1; overflow-y: auto; padding: 16px;
-    display: flex; flex-direction: column; gap: 12px;
-    background: #FAFAF9;
-  }
-  .msg { display: flex; gap: 8px; align-items: flex-end; max-width: 85%; }
-  .msg.bot { align-self: flex-start; }
-  .msg.user { align-self: flex-end; flex-direction: row-reverse; }
-  .msg-bubble {
-    padding: 10px 14px; border-radius: 18px; font-size: 0.875rem; line-height: 1.5;
-  }
-  .bot .msg-bubble {
-    background: white; color: var(--text);
-    border: 1px solid rgba(45,27,105,0.1);
-    border-bottom-left-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  }
-  .user .msg-bubble {
-    background: linear-gradient(135deg, var(--royal), #4A1A6E);
-    color: white; border-bottom-right-radius: 4px;
-  }
-  .msg-bot-icon { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--pink)); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
-
-  .typing { display: flex; gap: 4px; align-items: center; padding: 12px 16px; }
-  .typing span {
-    width: 7px; height: 7px; border-radius: 50%; background: #9A8ABE;
-    animation: typingBounce 1.2s ease-in-out infinite;
-  }
-  .typing span:nth-child(2) { animation-delay: 0.2s; }
-  .typing span:nth-child(3) { animation-delay: 0.4s; }
-  @keyframes typingBounce { 0%,60%,100% { transform: translateY(0); } 30% { transform: translateY(-6px); } }
-
-  .chat-quick { display: flex; gap: 8px; padding: 10px 16px 0; flex-wrap: wrap; }
-  .quick-chip {
-    background: rgba(45,27,105,0.07); border: 1px solid rgba(45,27,105,0.15);
-    color: var(--royal); padding: 6px 14px; border-radius: 50px;
-    font-size: 0.78rem; cursor: pointer; font-family: 'Poppins', sans-serif;
-    transition: all 0.15s;
-  }
-  .quick-chip:hover { background: var(--royal); color: white; }
-
-  .chat-input-row {
-    display: flex; gap: 8px; padding: 14px 16px;
-    border-top: 1px solid rgba(45,27,105,0.08);
-    background: white;
-  }
-  #chat-input {
-    flex: 1; border: 1.5px solid rgba(45,27,105,0.15); border-radius: 50px;
-    padding: 10px 16px; font-family: 'Poppins', sans-serif; font-size: 0.875rem;
-    color: var(--text); outline: none; transition: border-color 0.2s;
-  }
-  #chat-input:focus { border-color: var(--royal); }
-  #chat-send {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--royal), var(--pink));
-    border: none; cursor: pointer; display: flex; align-items: center;
-    justify-content: center; font-size: 1rem; transition: transform 0.2s;
-  }
-  #chat-send:hover { transform: scale(1.1); }
-
-  /* scroll-reveal */
-  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  @media (max-width: 768px) {
-    nav { padding: 14px 20px; }
-    .nav-links { display: none; }
-    .section { padding: 64px 20px; }
-    .location-grid { grid-template-columns: 1fr; }
-    .menu-section { padding: 64px 20px; }
-    footer { padding: 40px 20px 28px; }
-  }
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){nav{padding:14px 20px}.nav-links{display:none}.section{padding:64px 20px}.location-grid{grid-template-columns:1fr}.menu-section{padding:64px 20px}footer{padding:40px 20px 28px}.orders-table-header,.order-row{grid-template-columns:1fr 1fr;font-size:.75rem}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo"><span>👑</span> Royal Waffles & Juices</div>
   <ul class="nav-links">
@@ -497,122 +226,76 @@
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#visit">Visit Us</a></li>
   </ul>
-  <button class="nav-cta" onclick="document.getElementById('chat-btn').click()">Chat With Us</button>
+  <div class="nav-right">
+    <button class="admin-btn" onclick="openAdmin()">⚙️ Admin</button>
+    <button class="cart-btn" onclick="openCart()">🛒 Cart <span class="cart-count" id="cart-count">0</span></button>
+  </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="waffle-bg"></div>
   <div class="particles" id="particles"></div>
   <div class="hero-content">
     <div class="hero-badge">✦ Now Open in Kukatpally ✦</div>
-    <h1>
-      <span class="gold">Royal</span> Waffles<br>
-      &amp; <span class="pink">Fresh Juices</span>
-    </h1>
+    <h1><span class="gold">Royal</span> Waffles<br>&amp; <span class="pink">Juices</span></h1>
     <p class="hero-sub">Crispy on the outside, cloud-soft inside — drizzled in chocolate royalty.<br>Paired with chilled juices bursting with life.</p>
-    <div class="hero-stars">
-      ★★★★★ <span>5.0 · Perfect Rating · Kukatpally's favourite treat</span>
-    </div>
+    <div class="hero-stars">★★★★★ <span>5.0 · Perfect Rating · Kukatpally's favourite treat</span></div>
     <div class="hero-btns">
-      <a href="#menu" class="btn-primary">🧇 See Our Menu</a>
+      <a href="#menu" class="btn-primary">🧇 Order Now</a>
       <a href="#visit" class="btn-secondary">📍 Find Us</a>
     </div>
   </div>
   <div class="scroll-hint">Scroll to explore</div>
 </section>
 
-<!-- WHY US -->
-<div style="padding: 0 24px;">
+<div style="padding:0 24px">
   <div class="section">
     <div class="section-label">Why Customers Love Us</div>
     <h2 class="section-title">More Than a Snack.<br>It's a Royal Experience.</h2>
     <p class="section-sub">Every visit is crafted to leave you smiling — from the first bite to the last sip.</p>
     <div class="features-grid">
-      <div class="feature-card reveal">
-        <div class="feature-icon">🧇</div>
-        <h3>Perfect Waffles</h3>
-        <p>Golden-crispy outside, fluffy-soft inside. Made fresh every order with premium batter and generous toppings.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">🥤</div>
-        <h3>Fresh-Squeezed Juices</h3>
-        <p>Chilled, refreshing, full of real fruit flavour. No concentrates — just pure, natural goodness in every glass.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">🍫</div>
-        <h3>Generous Toppings</h3>
-        <p>Rich chocolate drizzles, fruit compotes, cream swirls — we don't hold back on making your treat look and taste amazing.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">⭐</div>
-        <h3>5-Star Every Time</h3>
-        <p>A perfect 5.0 rating from every customer. Quality and freshness are non-negotiable at Royal.</p>
-      </div>
+      <div class="feature-card reveal"><div class="feature-icon">🧇</div><h3>Perfect Waffles</h3><p>Golden-crispy outside, fluffy-soft inside. Made fresh every order with premium batter.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">🥤</div><h3>Fresh-Squeezed Juices</h3><p>Chilled, refreshing, full of real fruit flavour. No concentrates — just pure goodness.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">🍫</div><h3>Generous Toppings</h3><p>Rich chocolate drizzles, fruit compotes, cream swirls — we don't hold back.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">⭐</div><h3>5-Star Every Time</h3><p>A perfect 5.0 rating from every customer. Quality and freshness are non-negotiable.</p></div>
     </div>
   </div>
 </div>
 
-<!-- MENU -->
 <section class="menu-section" id="menu">
-  <div style="max-width: 1200px; margin: 0 auto;">
+  <div style="max-width:1200px;margin:0 auto">
     <div class="section-label">Our Menu</div>
     <h2 class="section-title">Choose Your Royal Treat</h2>
-    <p class="section-sub">Handcrafted waffles and freshly pressed juices to mix, match, and savour.</p>
+    <p class="section-sub">Tap any item to add to your cart and place an order!</p>
     <div class="menu-tabs">
-      <button class="tab active" onclick="filterMenu('waffles', this)">🧇 Waffles</button>
-      <button class="tab" onclick="filterMenu('juices', this)">🥤 Juices</button>
-      <button class="tab" onclick="filterMenu('combos', this)">👑 Combos</button>
+      <button class="tab active" onclick="filterMenu('waffles',this)">🧇 Waffles</button>
+      <button class="tab" onclick="filterMenu('juices',this)">🥤 Juices</button>
+      <button class="tab" onclick="filterMenu('combos',this)">👑 Combos</button>
     </div>
-    <div class="menu-grid" id="menu-grid">
-      <!-- populated by JS -->
-    </div>
+    <div class="menu-grid" id="menu-grid"></div>
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section id="reviews" style="padding-top: 80px; text-align: center;">
-  <div class="section-label" style="color: var(--pink); margin-bottom: 8px;">What People Say</div>
-  <h2 class="section-title" style="margin-bottom: 40px; color: var(--royal);">Our Customers Speak for Us</h2>
-  <div class="reviews-strip">
-    <div class="reviews-track" id="reviews-track"></div>
-  </div>
+<section id="reviews" style="padding-top:80px;text-align:center">
+  <div class="section-label" style="color:var(--pink);margin-bottom:8px">What People Say</div>
+  <h2 class="section-title" style="margin-bottom:40px;color:var(--royal)">Our Customers Speak for Us</h2>
+  <div class="reviews-strip"><div class="reviews-track" id="reviews-track"></div></div>
 </section>
 
-<!-- LOCATION -->
-<section id="visit" style="background: linear-gradient(160deg, #F0EBF8 0%, var(--cream) 100%);">
-  <div class="location-section">
+<section id="visit" style="background:linear-gradient(160deg,#F0EBF8 0%,var(--cream) 100%)">
+  <div class="location-section" style="padding:96px 48px;max-width:1200px;margin:0 auto">
     <div class="location-grid">
-      <div class="location-info reveal">
+      <div class="reveal">
         <div class="section-label">Come Visit Us</div>
         <h2 class="section-title">Find Us in<br>Kukatpally</h2>
-        <p style="color: #7A6EA0; margin-bottom: 32px;">We're conveniently located in Balakrishna Nagar — perfect for a quick treat or a relaxed sit-down dessert experience.</p>
-
-        <div class="info-row">
-          <div class="info-icon">📍</div>
-          <div>
-            <strong>Address</strong>
-            <p>Balakrishna Nagar, Kukatpally<br>Hyderabad, Telangana 500072</p>
-          </div>
-        </div>
-        <div class="info-row">
-          <div class="info-icon">🕐</div>
-          <div>
-            <strong>Hours</strong>
-            <p>Opens 12:00 PM daily<br><em style="color: #F5A623;">Best time: 3–6 PM for the freshest batches!</em></p>
-          </div>
-        </div>
-        <div class="info-row">
-          <div class="info-icon">⭐</div>
-          <div>
-            <strong>Rating</strong>
-            <p>5.0 / 5.0 on Google Maps<br>100% of customers recommend us</p>
-          </div>
-        </div>
-        <a href="https://maps.google.com/?q=Royal+Waffles+and+Juices+Kukatpally+Hyderabad" target="_blank" class="map-btn" style="margin-top: 12px;">🗺️ Open in Google Maps</a>
+        <p style="color:#7A6EA0;margin-bottom:32px">We're conveniently located in Balakrishna Nagar — perfect for a quick treat!</p>
+        <div class="info-row"><div class="info-icon">📍</div><div><strong>Address</strong><p style="color:#7A6EA0">Balakrishna Nagar, Kukatpally<br>Hyderabad, Telangana 500072</p></div></div>
+        <div class="info-row"><div class="info-icon">🕐</div><div><strong>Hours</strong><p style="color:#7A6EA0">Opens 12:00 PM daily</p></div></div>
+        <div class="info-row"><div class="info-icon">⭐</div><div><strong>Rating</strong><p style="color:#7A6EA0">5.0 / 5.0 on Google Maps</p></div></div>
+        <a href="https://maps.google.com/?q=Royal+Waffles+and+Juices+Kukatpally+Hyderabad" target="_blank" class="map-btn">🗺️ Open in Google Maps</a>
       </div>
       <div class="map-embed reveal">
-        <div class="map-embed-inner">🗺️</div>
+        <div style="font-size:3rem">🗺️</div>
         <p><strong>Royal Waffles & Juices</strong><br>Balakrishna Nagar, Kukatpally<br>Hyderabad – 500072</p>
         <a href="https://maps.google.com/?q=Royal+Waffles+and+Juices+Kukatpally+Hyderabad" target="_blank" class="map-btn">Get Directions →</a>
       </div>
@@ -620,277 +303,364 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">👑 Royal Waffles & Juices</div>
   <p>Balakrishna Nagar, Kukatpally, Hyderabad – 500072</p>
   <p>Opens 12 PM · 5.0 ★ on Google</p>
   <div class="footer-divider"></div>
-  <p style="font-size: 0.75rem; color: rgba(255,255,255,0.3);">© 2025 Royal Waffles & Juices. Crafted with 🧇 & ❤️ in Hyderabad.</p>
+  <p style="font-size:.75rem;color:rgba(255,255,255,.3)">© 2025 Royal Waffles & Juices. Crafted with 🧇 & ❤️ in Hyderabad.</p>
 </footer>
 
-<!-- CHATBOT BUTTON -->
-<button id="chat-btn" title="Chat with us">🧇</button>
+<!-- CART SIDEBAR -->
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+<div class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h3>🛒 Your Cart</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-footer" id="cart-footer" style="display:none">
+    <div class="cart-total"><span>Total</span><span id="cart-total">₹0</span></div>
+    <button class="checkout-btn" onclick="openCheckout()">Place Order 👑</button>
+  </div>
+</div>
 
-<!-- CHAT WINDOW -->
+<!-- ADMIN PANEL -->
+<div class="admin-panel" id="admin-panel">
+  <div class="admin-nav">
+    <h2>👑 Royal Admin Dashboard</h2>
+    <div style="display:flex;gap:12px">
+      <button class="admin-refresh" onclick="loadAdminData()">🔄 Refresh</button>
+      <button class="admin-close" onclick="closeAdmin()">✕ Close</button>
+    </div>
+  </div>
+  <div class="admin-body">
+    <div class="stats-grid" id="admin-stats"></div>
+    <h3 style="color:white;margin-bottom:16px;font-family:'Playfair Display',serif">📋 Recent Orders</h3>
+    <button class="admin-refresh" onclick="loadAdminData()">🔄 Load Orders</button>
+    <div class="orders-table" id="orders-table"></div>
+  </div>
+</div>
+
+<button id="chat-btn" title="Chat with us">🧇</button>
 <div id="chat-window">
   <div class="chat-header">
     <div class="chat-avatar">👑</div>
-    <div class="chat-header-info">
-      <h4>Royal Assistant</h4>
-      <div class="chat-online"><div class="chat-dot"></div><p>Online now</p></div>
-    </div>
+    <div class="chat-header-info"><h4>Royal Assistant</h4><p>Online now</p></div>
   </div>
   <div id="chat-msgs"></div>
   <div class="chat-quick" id="quick-chips"></div>
   <div class="chat-input-row">
-    <input id="chat-input" type="text" placeholder="Ask about our menu, hours, location…" autocomplete="off" />
+    <input id="chat-input" type="text" placeholder="Ask about our menu, hours…" autocomplete="off"/>
     <button id="chat-send">➤</button>
   </div>
 </div>
 
 <script>
-// ── PARTICLES ──
-const emojis = ['🧇','🥤','🍓','🍫','🥭','🍇','🍊','🥝','🍋','🍑'];
-const pContainer = document.getElementById('particles');
-for (let i = 0; i < 18; i++) {
-  const p = document.createElement('div');
-  p.className = 'particle';
-  p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-  p.style.left = Math.random() * 100 + '%';
-  p.style.animationDuration = (8 + Math.random() * 12) + 's';
-  p.style.animationDelay = (Math.random() * 10) + 's';
-  p.style.fontSize = (1.2 + Math.random() * 1.2) + 'rem';
-  pContainer.appendChild(p);
-}
+const API = 'https://royal-waffles-backend-production.up.railway.app/api';
 
-// ── MENU DATA ──
-const menuData = {
-  waffles: [
-    { emoji:'🧇', name:'Classic Chocolate Royal', desc:'Fluffy waffle with rich dark chocolate drizzle and whipped cream', price:'₹120', badge:'Bestseller' },
-    { emoji:'🍓', name:'Strawberry Bliss Waffle', desc:'Golden waffle topped with fresh strawberries and strawberry sauce', price:'₹130', badge:'' },
-    { emoji:'🍫', name:'Double Choco Crunch', desc:'Double chocolate batter, chocolate chips, and nutella drizzle', price:'₹150', badge:'Fan Favourite' },
-    { emoji:'🍦', name:'Vanilla Dream Waffle', desc:'Buttery waffle with vanilla ice cream and caramel drizzle', price:'₹140', badge:'' },
-    { emoji:'🥜', name:'Peanut Butter Delight', desc:'Warm waffle smothered in creamy peanut butter and honey drizzle', price:'₹145', badge:'' },
-    { emoji:'🍌', name:'Banana Caramel Waffle', desc:'Sliced fresh bananas with golden caramel sauce and crushed nuts', price:'₹135', badge:'' },
-    { emoji:'🫐', name:'Blueberry Cheesecake Waffle', desc:'Cream cheese spread, fresh blueberries and blueberry compote', price:'₹155', badge:'New' },
-    { emoji:'🍍', name:'Tropical Pineapple Waffle', desc:'Juicy pineapple chunks with coconut cream and toasted coconut flakes', price:'₹140', badge:'' },
-    { emoji:'🍎', name:'Cinnamon Apple Crumble', desc:'Spiced sautéed apples with cinnamon sugar and buttery crumble topping', price:'₹145', badge:'' },
-    { emoji:'🍬', name:'Oreo Crunch Waffle', desc:'Vanilla cream base loaded with crushed Oreo cookies and chocolate sauce', price:'₹160', badge:'Kids Fav' },
-    { emoji:'🌹', name:'Rose Milk Waffle', desc:'Delicate rose-flavoured cream, dried rose petals and white chocolate drizzle', price:'₹150', badge:'' },
-    { emoji:'🧀', name:'Butter & Maple Waffle', desc:'Pure classic — generous butter, real maple syrup and powdered sugar', price:'₹100', badge:'Classic' },
+// ── PARTICLES ──
+const emojis=['🧇','🥤','🍓','🍫','🥭','🍇','🍊','🥝','🍋','🍑'];
+const pc=document.getElementById('particles');
+for(let i=0;i<18;i++){const p=document.createElement('div');p.className='particle';p.textContent=emojis[Math.floor(Math.random()*emojis.length)];p.style.left=Math.random()*100+'%';p.style.animationDuration=(8+Math.random()*12)+'s';p.style.animationDelay=(Math.random()*10)+'s';pc.appendChild(p)}
+
+// ── MENU ──
+let menuData={
+  waffles:[
+    {emoji:'🧇',name:'Milk Magic',desc:'Classic waffle with a smooth milky flavor.',prices:{pop:59,pocket:109},badge:'Classic'},
+    {emoji:'🧇',name:'White Wonder',desc:'Creamy white chocolate waffle with dreamy topping.',prices:{pop:59,pocket:109},badge:'Classic'},
+    {emoji:'🧇',name:'Dark Delicious',desc:'Dark chocolate waffle with rich cocoa crunch.',prices:{pop:59,pocket:109},badge:'Classic'},
+    {emoji:'🧇',name:'Crazy Caramel',desc:'Caramel-glazed waffle with buttery sweetness.',prices:{pop:59,pocket:109},badge:'Classic'},
+    {emoji:'🧇',name:'Happy Honey',desc:'Honey-drizzled waffle with warm flavor.',prices:{pop:59,pocket:109},badge:'Classic'},
+    {emoji:'🧇',name:'Nuts Overdose',desc:'Crunchy waffle loaded with mixed nuts.',prices:{pop:69,pocket:129},badge:'Trendy'},
+    {emoji:'🧇',name:'Triple Temptation',desc:'Three-chocolate waffle with large fudgy swirls.',prices:{pop:68,pocket:129},badge:'Trendy'},
+    {emoji:'🧇',name:'Cookie Cream',desc:'Waffle topped with cookie crumbs and cream.',prices:{pop:59,pocket:129},badge:'Trendy'},
+    {emoji:'🧇',name:'Rainbow',desc:'Colorful waffle topped with sweet candy gems.',prices:{pop:59,pocket:109},badge:'Trendy'},
+    {emoji:'🧇',name:'Gems',desc:'Waffle studded with crunchy candy gems.',prices:{pop:59,pocket:109},badge:'Trendy'},
+    {emoji:'🧇',name:'Crunchy Kit Kat',desc:'Flavored waffle with Kit Kat crunch and chocolate.',prices:{pop:69,pocket:129},badge:'Flavoured'},
+    {emoji:'🧇',name:'Oreo Ocean',desc:'Oreo waffle with creamy filling and cookie bits.',prices:{pop:69,pocket:129},badge:'Flavoured'},
+    {emoji:'🧇',name:'Snacky Snickers',desc:'Snickers-style waffle with caramel and peanuts.',prices:{pop:69,pocket:129},badge:'Flavoured'},
+    {emoji:'🧇',name:'Munching Munch',desc:'Crunchy flavored waffle with sweet toppings.',prices:{pop:69,pocket:129},badge:'Flavoured'},
+    {emoji:'🧇',name:'Punchy Perk',desc:'Bold flavored waffle with crunchy chocolate bits.',prices:{pop:69,pocket:129},badge:'Flavoured'},
+    {emoji:'🧇',name:'Naughty Nutella',desc:'Nutella waffle with rich hazelnut cream.',prices:{pop:69,pocket:129},badge:'Special'},
+    {emoji:'🧇',name:'Pistha Paradise',desc:'Pistachio waffle with creamy nutty flavor.',prices:{pop:99,pocket:159},badge:'Special'},
+    {emoji:'🧇',name:'Brownie',desc:'Fudgy brownie waffle with chocolate sauce.',prices:{pop:79,pocket:159},badge:'Special'},
+    {emoji:'🧇',name:'Red Velvet',desc:'Red velvet waffle with cream cheese drizzle.',prices:{pop:79,pocket:159},badge:'Special'},
+    {emoji:'🧇',name:'Ferrero Rocher',desc:'Ferrero Rocher waffle with hazelnut crunch.',prices:{pop:89,pocket:159},badge:'Special'},
   ],
-  juices: [
-    { emoji:'🥭', name:'Mango Magic', desc:'Fresh Alphonso mangoes blended chilled — pure tropical joy', price:'₹80', badge:'Seasonal Special' },
-    { emoji:'🍊', name:'Citrus Burst', desc:'Orange, lemon & sweet lime combo — zesty and refreshing', price:'₹70', badge:'' },
-    { emoji:'🥝', name:'Green Detox', desc:'Kiwi, cucumber, mint & lime — fresh and revitalising', price:'₹90', badge:'Healthy Pick' },
-    { emoji:'🍇', name:'Mixed Berry Crush', desc:'Strawberry, grape & blueberry blended with a hint of honey', price:'₹95', badge:'' },
-    { emoji:'🍉', name:'Watermelon Cooler', desc:'Chilled fresh watermelon juice with a pinch of black salt and mint', price:'₹65', badge:'Summer Hit' },
-    { emoji:'🍍', name:'Pineapple Mint Splash', desc:'Tangy pineapple juice blended with fresh mint leaves and ginger', price:'₹75', badge:'' },
-    { emoji:'🍋', name:'Lemon Ginger Zing', desc:'Freshly squeezed lemon with ginger, honey and a pinch of pepper', price:'₹60', badge:'' },
-    { emoji:'🍎', name:'Apple Fresh', desc:'Cold-pressed fresh apple juice with a hint of cinnamon', price:'₹80', badge:'' },
-    { emoji:'🥕', name:'Carrot Orange Boost', desc:'Sweet carrots and oranges blended for a natural vitamin-rich drink', price:'₹75', badge:'Healthy Pick' },
-    { emoji:'🍓', name:'Strawberry Shake', desc:'Fresh strawberries blended with chilled milk and a scoop of ice cream', price:'₹100', badge:'Creamy' },
-    { emoji:'🥥', name:'Coconut Cooler', desc:'Tender coconut water with coconut cream and a dash of lime', price:'₹85', badge:'' },
-    { emoji:'🫚', name:'Avocado Smoothie', desc:'Creamy avocado blended with banana, honey and almond milk', price:'₹110', badge:'Premium' },
+  juices:[
+    {emoji:'🍉',name:'Watermelon',desc:'Fresh watermelon juice served chilled.',price:40,badge:''},
+    {emoji:'🍈',name:'Muskmelon',desc:'Sweet muskmelon juice with chilled freshness.',price:50,badge:''},
+    {emoji:'🍌',name:'Chakkarakeli',desc:'Banana-style chakkarakeli juice with natural sweetness.',price:50,badge:''},
+    {emoji:'🍐',name:'Sapota',desc:'Creamy sapota juice with rich fruit flavor.',price:50,badge:''},
+    {emoji:'🍍',name:'Pineapple',desc:'Tangy pineapple juice with bright refreshment.',price:50,badge:''},
+    {emoji:'🍎',name:'Apple',desc:'Crisp apple juice with fruity notes.',price:60,badge:''},
+    {emoji:'🥭',name:'Mango',desc:'Sweet mango juice with ripe tropical flavor.',price:60,badge:''},
+    {emoji:'🥤',name:'Pomegranate',desc:'Bold pomegranate juice with tart refreshment.',price:70,badge:''},
+    {emoji:'🥜',name:'Dry Fruit Juice',desc:'Nutty dry fruit juice packed with energy.',price:110,badge:''},
+    {emoji:'🍨',name:'Dry Fruit Ice Cream Juice',desc:'Creamy dry fruit juice topped with ice cream.',price:130,badge:''},
   ],
-  combos: [
-    { emoji:'👑', name:'Royal Combo', desc:'Any signature waffle + any large fresh juice of your choice', price:'₹189', badge:'Best Value' },
-    { emoji:'💕', name:'Couple\'s Treat', desc:'2 waffles + 2 juices — perfect to share the sweetness', price:'₹340', badge:'Popular' },
-    { emoji:'🎉', name:'Party Pack (4)', desc:'4 assorted waffles + 4 fresh juices for your squad', price:'₹620', badge:'Group Deal' },
+  combos:[
+    {emoji:'👑',name:'Royal Combo',desc:'Any signature waffle + any juice in one tasty bundle.',price:189,badge:'Best Value'},
+    {emoji:'💕',name:"Couple's Treat",desc:'Two waffles and two juices — perfect for sharing.',price:340,badge:'Popular'},
+    {emoji:'🎉',name:'Party Pack (4)',desc:'Four waffles and four juices for your group or family.',price:620,badge:'Group Deal'},
   ]
 };
 
-let activeCategory = 'waffles';
-function filterMenu(cat, el) {
-  activeCategory = cat;
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
+let activeCategory='waffles';
+async function loadMenuData(){
+  try{
+    const res=await fetch(API+'/menu');
+    if(!res.ok)throw new Error('Menu fetch failed');
+    const json=await res.json();
+    if(json?.success && json?.data){
+      menuData = json.data;
+    } else if(json?.data){
+      menuData = json.data;
+    } else if(json && typeof json === 'object' && (json.waffles || json.juices || json.combos)){
+      menuData = json;
+    } else {
+      console.warn('Backend returned unexpected menu structure', json);
+    }
+  }catch(e){
+    console.warn('Unable to load menu from backend, using local menu data.', e);
+  }
+}
+async function initApp(){
+  await loadMenuData();
   renderMenu();
 }
-function renderMenu() {
-  const grid = document.getElementById('menu-grid');
-  grid.innerHTML = menuData[activeCategory].map((item, i) => `
-    <div class="menu-card" onclick="openModal(${JSON.stringify(activeCategory)}, ${i})">
-      ${item.badge ? `<span class="bestseller">${item.badge}</span>` : ''}
+function filterMenu(cat,el){activeCategory=cat;document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');renderMenu()}
+function renderMenu(){
+  const grid=document.getElementById('menu-grid');
+  grid.innerHTML=menuData[activeCategory].map((item,i)=>`
+    <div class="menu-card" onclick="openItemModal('${activeCategory}',${i})">
+      ${item.badge?`<span class="bestseller">${item.badge}</span>`:''}
       <div class="menu-emoji">${item.emoji}</div>
       <h4>${item.name}</h4>
       <p>${item.desc}</p>
-      <span class="menu-price">${item.price}</span>
+      <span class="menu-price">${item.prices?`Pop ₹${item.prices.pop} / Pocket ₹${item.prices.pocket}`:`₹${item.price}`}</span>
+      <button class="add-to-cart" onclick="event.stopPropagation();openItemModal('${activeCategory}',${i})">+</button>
     </div>
   `).join('');
 }
+initApp();
 
-function openModal(cat, idx) {
-  const item = menuData[cat][idx];
-  const existing = document.getElementById('item-modal');
-  if (existing) existing.remove();
-  const overlay = document.createElement('div');
-  overlay.className = 'modal-overlay'; overlay.id = 'item-modal';
-  overlay.innerHTML = `
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeModal()">✕</button>
-      <div class="modal-emoji">${item.emoji}</div>
-      ${item.badge ? `<div class="modal-badge">${item.badge}</div>` : ''}
-      <h3>${item.name}</h3>
-      <p>${item.desc}</p>
-      <div class="modal-price">${item.price}</div>
-      <button class="modal-btn" onclick="closeModal()">👑 Sounds Delicious!</button>
-    </div>
-  `;
-  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+// ── ITEM MODAL ──
+function openItemModal(cat,idx){
+  const item=menuData[cat][idx];
+  const existing=document.getElementById('item-modal');
+  if(existing)existing.remove();
+  const overlay=document.createElement('div');
+  overlay.className='modal-overlay';overlay.id='item-modal';
+  overlay.innerHTML=`<div class="modal-box" style="text-align:center">
+    <button class="modal-close" onclick="document.getElementById('item-modal').remove()">✕</button>
+    <div style="font-size:4rem;margin-bottom:12px">${item.emoji}</div>
+    ${item.badge?`<span class="bestseller">${item.badge}</span>`:''}
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--royal);margin:12px 0">${item.name}</h3>
+    <p style="color:#7A6EA0;margin-bottom:16px">${item.desc}</p>
+    <div style="font-size:2rem;font-weight:700;color:var(--gold);margin-bottom:24px">${item.prices?`Pop ₹${item.prices.pop} / Pocket ₹${item.prices.pocket}`:`₹${item.price}`}</div>
+    ${item.prices?`<div style="display:flex;gap:12px;justify-content:center;margin-bottom:16px">
+      <button class="place-order-btn" onclick="addToCart('${cat}',${idx},'Pop');document.getElementById('item-modal').remove();openCart()">Pop ₹${item.prices.pop}</button>
+      <button class="place-order-btn" onclick="addToCart('${cat}',${idx},'Pocket');document.getElementById('item-modal').remove();openCart()">Pocket ₹${item.prices.pocket}</button>
+    </div>`:`<button class="place-order-btn" onclick="addToCart('${cat}',${idx});document.getElementById('item-modal').remove();openCart()">🛒 Add to Cart</button>`}
+  </div>`;
+  overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.remove()});
   document.body.appendChild(overlay);
-  document.body.style.overflow = 'hidden';
 }
 
-function closeModal() {
-  const m = document.getElementById('item-modal');
-  if (m) m.remove();
-  document.body.style.overflow = '';
+// ── CART ──
+let cart=[];
+function addToCart(cat,idx,selectedSize=''){
+  const item=menuData[cat][idx];
+  const size = item.prices ? (selectedSize || 'Pocket') : '';
+  const normalizedSize = size.toLowerCase();
+  const unitPrice = item.prices ? item.prices[normalizedSize] : item.price;
+  const itemName = size ? `${item.name} (${size})` : item.name;
+  const existing=cart.find(c=>c.name===itemName);
+  if(existing){existing.quantity++}else{cart.push({...item,name:itemName,price:unitPrice,size,quantity:1})}
+  updateCartUI();
+  showCartToast(itemName);
 }
-renderMenu();
+function showCartToast(name){
+  const t=document.createElement('div');
+  t.style.cssText='position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:var(--royal);color:white;padding:12px 24px;border-radius:50px;font-size:.9rem;font-weight:600;z-index:500;animation:fadeIn .3s ease';
+  t.textContent='✅ '+name+' added to cart!';
+  document.body.appendChild(t);
+  setTimeout(()=>t.remove(),2000);
+}
+function updateCartUI(){
+  const count=cart.reduce((s,i)=>s+i.quantity,0);
+  document.getElementById('cart-count').textContent=count;
+  const itemsEl=document.getElementById('cart-items');
+  const footerEl=document.getElementById('cart-footer');
+  if(cart.length===0){
+    itemsEl.innerHTML='<div class="cart-empty"><div>🛒</div><p>Your cart is empty</p><p style="font-size:.85rem;margin-top:8px">Add some delicious items from the menu!</p></div>';
+    footerEl.style.display='none';return;
+  }
+  const total=cart.reduce((s,i)=>s+i.price*i.quantity,0);
+  itemsEl.innerHTML=cart.map((item,i)=>`
+    <div class="cart-item">
+      <div class="cart-item-emoji">${item.emoji}</div>
+      <div class="cart-item-info"><h5>${item.name}</h5><p>₹${item.price} each</p></div>
+      <div class="cart-item-qty">
+        <button class="qty-btn" onclick="changeQty(${i},-1)">−</button>
+        <span class="qty-num">${item.quantity}</span>
+        <button class="qty-btn" onclick="changeQty(${i},1)">+</button>
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('cart-total').textContent='₹'+total;
+  footerEl.style.display='block';
+}
+function changeQty(idx,delta){
+  cart[idx].quantity+=delta;
+  if(cart[idx].quantity<=0)cart.splice(idx,1);
+  updateCartUI();
+}
+function openCart(){document.getElementById('cart-overlay').classList.add('open');document.getElementById('cart-sidebar').classList.add('open');updateCartUI()}
+function closeCart(){document.getElementById('cart-overlay').classList.remove('open');document.getElementById('cart-sidebar').classList.remove('open')}
+
+// ── CHECKOUT ──
+function openCheckout(){
+  closeCart();
+  const total=cart.reduce((s,i)=>s+i.price*i.quantity,0);
+  const overlay=document.createElement('div');
+  overlay.className='modal-overlay';overlay.id='checkout-modal';
+  overlay.innerHTML=`<div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('checkout-modal').remove()">✕</button>
+    <h3>👑 Place Your Order</h3>
+    <div class="order-summary">
+      <h4>Order Summary</h4>
+      ${cart.map(i=>`<div class="order-summary-item"><span>${i.emoji} ${i.name} x${i.quantity}</span><span>₹${i.price*i.quantity}</span></div>`).join('')}
+      <div class="order-total-row"><span>Total</span><span>₹${total}</span></div>
+    </div>
+    <div class="form-group"><label>Your Name *</label><input id="cust-name" type="text" placeholder="Enter your name"/></div>
+    <div class="form-group"><label>Phone Number *</label><input id="cust-phone" type="tel" placeholder="Enter your phone number"/></div>
+    <div class="form-group"><label>Delivery Address *</label><textarea id="cust-address" placeholder="Enter your delivery address"></textarea></div>
+    <div class="form-group"><label>Special Note (optional)</label><textarea id="cust-note" placeholder="Any special requests?"></textarea></div>
+    <button class="place-order-btn" id="place-btn" onclick="placeOrder()">🧇 Confirm Order — ₹${total}</button>
+  </div>`;
+  overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.remove()});
+  document.body.appendChild(overlay);
+}
+
+async function placeOrder(){
+  const name=document.getElementById('cust-name').value.trim();
+  const phone=document.getElementById('cust-phone').value.trim();
+  const address=document.getElementById('cust-address').value.trim();
+  const note=document.getElementById('cust-note').value.trim();
+  if(!name||!phone||!address){alert('Please enter your name, phone number and delivery address!');return}
+  const btn=document.getElementById('place-btn');
+  btn.disabled=true;btn.textContent='Placing order...';
+  try{
+    const res=await fetch(API+'/orders',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+      customerName:name,customerPhone:phone,address,note,
+      items:cart.map(i=>({name:i.name,price:i.price,quantity:i.quantity, size:i.size || ''}))
+    })});
+    const data=await res.json();
+    if(data.success){
+      const modal=document.getElementById('checkout-modal');
+      modal.querySelector('.modal-box').innerHTML=`<div class="success-box">
+        <div class="success-icon">🎉</div>
+        <h3>Order Placed!</h3>
+        <p>Thank you <strong>${name}</strong>!</p>
+        <p>Your delicious order is being prepared 🧇</p>
+        <div class="order-id">Order ID: ${data.data._id.slice(-8).toUpperCase()}</div>
+        <p style="font-size:.85rem;color:#9A8ABE">We'll have it ready for you soon!</p>
+        <button class="place-order-btn" style="margin-top:20px" onclick="document.getElementById('checkout-modal').remove()">👑 Done!</button>
+      </div>`;
+      cart=[];updateCartUI();
+    }else{throw new Error(data.message)}
+  }catch(e){
+    btn.disabled=false;btn.textContent='Retry';
+    alert('Could not place order. Please try again!');
+  }
+}
+
+// ── ADMIN ──
+function openAdmin(){document.getElementById('admin-panel').classList.add('open');loadAdminData()}
+function closeAdmin(){document.getElementById('admin-panel').classList.remove('open')}
+async function loadAdminData(){
+  try{
+    const [statsRes,ordersRes]=await Promise.all([fetch(API+'/stats'),fetch(API+'/orders')]);
+    const stats=await statsRes.json();
+    const orders=await ordersRes.json();
+    if(stats.success){
+      const s=stats.data;
+      document.getElementById('admin-stats').innerHTML=`
+        <div class="stat-card"><div class="stat-value">${s.totalOrders}</div><div class="stat-label">Total Orders</div></div>
+        <div class="stat-card"><div class="stat-value">₹${s.totalRevenue}</div><div class="stat-label">Total Revenue</div></div>
+        <div class="stat-card"><div class="stat-value">${s.statusCounts?.placed||0}</div><div class="stat-label">New Orders</div></div>
+        <div class="stat-card"><div class="stat-value">${s.statusCounts?.delivered||0}</div><div class="stat-label">Delivered</div></div>
+      `;
+    }
+    if(orders.success){
+      const rows=orders.data;
+      if(rows.length===0){document.getElementById('orders-table').innerHTML='<div class="no-orders">📭 No orders yet! Share your website and orders will appear here.</div>';return}
+      document.getElementById('orders-table').innerHTML=`
+        <div class="orders-table-header"><span>Customer</span><span>Phone</span><span>Items</span><span>Amount</span><span>Status</span></div>
+        ${rows.map(o=>`
+          <div class="order-row">
+            <div class="order-name">${o.customerName}</div>
+            <div class="order-phone">${o.customerPhone}</div>
+            <div class="order-items-text">${o.items.map(i=>i.name+' x'+i.quantity).join(', ')}</div>
+            <div class="order-amount">₹${o.totalAmount}</div>
+            <button class="status-badge status-${o.status}" onclick="updateStatus('${o._id}','${o.status}')">${o.status}</button>
+          </div>
+        `).join('')}
+      `;
+    }
+  }catch(e){document.getElementById('orders-table').innerHTML='<div class="no-orders">⚠️ Could not load orders. Check your backend connection.</div>'}
+}
+async function updateStatus(id,current){
+  const next={placed:'preparing',preparing:'ready',ready:'delivered',delivered:'placed'};
+  try{
+    await fetch(API+'/orders/'+id+'/status',{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({status:next[current]})});
+    loadAdminData();
+  }catch(e){alert('Could not update status')}
+}
 
 // ── REVIEWS ──
-const reviews = [
-  { text: '"Absolutely delicious waffles! Crispy on the outside, soft on the inside, and loaded with rich chocolate. Perfect dessert for chocolate lovers. Will definitely visit again!"', name: 'Pranathi Akula', date: '2 weeks ago', initials: 'PA' },
-  { text: '"Absolutely loved the waffles — fresh, soft, and topped perfectly. The juice was chilled, refreshing, and full of flavor. Such a great combo for a quick treat. Highly recommended!"', name: 'Marripudi Hari Chandana', date: '2 weeks ago', initials: 'MH' },
-  { text: '"Absolutely amazing place for waffles and fresh juices! The waffles are perfectly crispy and soft, with so many delicious flavors. Every bite tastes fresh and premium. The juices are incredible!"', name: 'Yamuna Chowdary', date: '1 month ago', initials: 'YC' },
-  { text: '"Best waffle spot in Kukatpally! The chocolate waffle is absolutely divine and the fresh mango juice is to die for. Great quality at such reasonable prices!"', name: 'Rahul Sharma', date: '3 weeks ago', initials: 'RS' },
-  { text: '"Stumbled upon this gem while exploring Kukatpally. The waffles were crispy perfection and the staff was super friendly. My go-to dessert spot now!"', name: 'Priya Reddy', date: '1 week ago', initials: 'PR' },
+const reviews=[
+  {text:'"Absolutely delicious waffles! Crispy on the outside, soft on the inside, loaded with rich chocolate. Will definitely visit again!"',name:'Pranathi Akula',date:'2 weeks ago',initials:'PA'},
+  {text:'"Absolutely loved the waffles — fresh, soft, and topped perfectly. The juice was chilled and full of flavor. Highly recommended!"',name:'Marripudi Hari Chandana',date:'2 weeks ago',initials:'MH'},
+  {text:'"Amazing place for waffles and fresh juices! The waffles are perfectly crispy and soft. Every bite tastes fresh and premium!"',name:'Yamuna Chowdary',date:'1 month ago',initials:'YC'},
+  {text:'"Best waffle spot in Kukatpally! The chocolate waffle is divine and the fresh mango juice is to die for. Great quality!"',name:'Rahul Sharma',date:'3 weeks ago',initials:'RS'},
+  {text:'"Stumbled upon this gem while exploring Kukatpally. The waffles were crispy perfection. My go-to dessert spot now!"',name:'Priya Reddy',date:'1 week ago',initials:'PR'},
 ];
-const track = document.getElementById('reviews-track');
-const doubled = [...reviews, ...reviews]; // duplicate for infinite scroll
-track.innerHTML = doubled.map(r => `
-  <div class="review-card">
-    <div class="review-stars">★★★★★</div>
-    <p class="review-text">${r.text}</p>
-    <div class="review-author">
-      <div class="review-avatar">${r.initials}</div>
-      <div><div class="review-name">${r.name}</div><div class="review-date">${r.date}</div></div>
-    </div>
-  </div>
-`).join('');
+const track=document.getElementById('reviews-track');
+const doubled=[...reviews,...reviews];
+track.innerHTML=doubled.map(r=>`<div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">${r.text}</p><div class="review-author"><div class="review-avatar">${r.initials}</div><div><div class="review-name">${r.name}</div><div class="review-date">${r.date}</div></div></div></div>`).join('');
 
 // ── SCROLL REVEAL ──
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
 // ── CHATBOT ──
-const chatBtn = document.getElementById('chat-btn');
-const chatWin = document.getElementById('chat-window');
-const chatMsgs = document.getElementById('chat-msgs');
-const chatInput = document.getElementById('chat-input');
-const chatSend = document.getElementById('chat-send');
-const quickChips = document.getElementById('quick-chips');
-let chatOpen = false;
-let greeted = false;
-
-const botKnowledge = `You are the friendly AI assistant for "Royal Waffles & Juices", a premium waffle and juice shop in Kukatpally, Hyderabad. 
-
-ABOUT THE SHOP:
-- Name: Royal Waffles & Juices
-- Location: Balakrishna Nagar, Kukatpally, Hyderabad, Telangana 500072
-- Hours: Opens 12 PM daily
-- Google Rating: 5.0 ⭐ (perfect score)
-- Speciality: Fresh crispy waffles + freshly squeezed juices
-
-MENU:
-WAFFLES:
-- Classic Chocolate Royal ₹120 (Bestseller) – fluffy waffle with rich dark chocolate drizzle
-- Strawberry Bliss Waffle ₹130 – fresh strawberries and strawberry sauce
-- Double Choco Crunch ₹150 (Fan Favourite) – double chocolate, nutella drizzle
-- Vanilla Dream Waffle ₹140 – vanilla ice cream and caramel drizzle
-
-JUICES:
-- Mango Magic ₹80 (Seasonal Special) – fresh Alphonso mangoes, chilled
-- Citrus Burst ₹70 – orange, lemon & sweet lime
-- Green Detox ₹90 – kiwi, cucumber, mint, lime
-- Mixed Berry Crush ₹95 – strawberry, grape, blueberry with honey
-
-COMBOS:
-- Royal Combo ₹189 (Best Value) – any waffle + any juice
-- Couple's Treat ₹340 – 2 waffles + 2 juices
-- Party Pack ₹620 – 4 waffles + 4 juices
-
-CUSTOMER REVIEWS highlight: crispy outside soft inside waffles, generous chocolate toppings, chilled refreshing juices, fresh premium quality.
-
-Be warm, enthusiastic, and helpful. Keep responses concise (2-4 sentences). Use occasional food emojis. Encourage them to visit or try combos for value. If asked something you don't know, say you'll have the team answer when they visit.`;
-
-chatBtn.addEventListener('click', () => {
-  chatOpen = !chatOpen;
-  chatWin.classList.toggle('open', chatOpen);
-  chatBtn.textContent = chatOpen ? '✕' : '🧇';
-  if (chatOpen && !greeted) {
-    greeted = true;
-    setTimeout(() => addBotMsg("👑 Hey there! Welcome to Royal Waffles & Juices! I'm your royal assistant. Ask me about our menu, location, hours, or anything else! 🧇🥤"), 400);
-    setTimeout(() => showQuickChips(['Our menu 🧇', 'Best waffle?', 'Where are you?', 'Opening hours']), 1200);
-  }
-});
-
-function showQuickChips(chips) {
-  quickChips.innerHTML = chips.map(c => `<button class="quick-chip" onclick="sendMessage('${c}')">${c}</button>`).join('');
+const chatBtn=document.getElementById('chat-btn');
+const chatWin=document.getElementById('chat-window');
+const chatMsgs=document.getElementById('chat-msgs');
+const chatInput=document.getElementById('chat-input');
+let chatOpen=false,greeted=false;
+const botKnowledge=`You are the friendly AI assistant for "Royal Waffles & Juices", a premium waffle and juice shop in Kukatpally, Hyderabad. Location: Balakrishna Nagar, Kukatpally. Opens 12 PM daily. Rating: 5.0 ⭐. Waffles from ₹100-₹160, Juices from ₹60-₹110, Combos from ₹189. Be warm, enthusiastic, helpful. Keep responses to 2-3 sentences. Use food emojis. Encourage them to order via the website!`;
+chatBtn.addEventListener('click',()=>{chatOpen=!chatOpen;chatWin.classList.toggle('open',chatOpen);chatBtn.textContent=chatOpen?'✕':'🧇';if(chatOpen&&!greeted){greeted=true;setTimeout(()=>addBotMsg("👑 Hey! Welcome to Royal Waffles & Juices! Ask me anything about our menu or place an order above! 🧇"),400);setTimeout(()=>showQuickChips(['Best waffle?','Juice options?','Location?','Combo deals?']),1200)}});
+function showQuickChips(chips){document.getElementById('quick-chips').innerHTML=chips.map(c=>`<button class="quick-chip" onclick="sendChatMsg('${c}')">${c}</button>`).join('')}
+function addBotMsg(text){const d=document.createElement('div');d.className='msg bot';d.innerHTML=`<div class="msg-bot-icon">👑</div><div class="msg-bubble">${text}</div>`;chatMsgs.appendChild(d);chatMsgs.scrollTop=chatMsgs.scrollHeight}
+function addUserMsg(text){const d=document.createElement('div');d.className='msg user';d.innerHTML=`<div class="msg-bubble">${text}</div>`;chatMsgs.appendChild(d);chatMsgs.scrollTop=chatMsgs.scrollHeight}
+function showTyping(){const d=document.createElement('div');d.className='msg bot';d.id='typing-indicator';d.innerHTML=`<div class="msg-bot-icon">👑</div><div class="msg-bubble"><div class="typing"><span></span><span></span><span></span></div></div>`;chatMsgs.appendChild(d);chatMsgs.scrollTop=chatMsgs.scrollHeight;return d}
+async function sendChatMsg(text){
+  const msg=text||chatInput.value.trim();if(!msg)return;chatInput.value='';document.getElementById('quick-chips').innerHTML='';
+  addUserMsg(msg);const typingEl=showTyping();
+  try{
+    const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:1000,system:botKnowledge,messages:[{role:"user",content:msg}]})});
+    const data=await res.json();typingEl.remove();
+    addBotMsg(data.content?.[0]?.text||"Visit us at Balakrishna Nagar, Kukatpally! 🧇");
+    showQuickChips(['Order now 🛒','Best combo?','How to find you?','Opening hours']);
+  }catch(e){typingEl.remove();addBotMsg("Come visit us at Balakrishna Nagar, Kukatpally — opens 12 PM daily! 🧇👑")}
 }
-
-function addBotMsg(text) {
-  const div = document.createElement('div');
-  div.className = 'msg bot';
-  div.innerHTML = `<div class="msg-bot-icon">👑</div><div class="msg-bubble">${text}</div>`;
-  chatMsgs.appendChild(div);
-  chatMsgs.scrollTop = chatMsgs.scrollHeight;
-}
-
-function addUserMsg(text) {
-  const div = document.createElement('div');
-  div.className = 'msg user';
-  div.innerHTML = `<div class="msg-bubble">${text}</div>`;
-  chatMsgs.appendChild(div);
-  chatMsgs.scrollTop = chatMsgs.scrollHeight;
-}
-
-function showTyping() {
-  const div = document.createElement('div');
-  div.className = 'msg bot'; div.id = 'typing-indicator';
-  div.innerHTML = `<div class="msg-bot-icon">👑</div><div class="msg-bubble"><div class="typing"><span></span><span></span><span></span></div></div>`;
-  chatMsgs.appendChild(div);
-  chatMsgs.scrollTop = chatMsgs.scrollHeight;
-  return div;
-}
-
-async function sendMessage(text) {
-  const msg = text || chatInput.value.trim();
-  if (!msg) return;
-  chatInput.value = '';
-  quickChips.innerHTML = '';
-  addUserMsg(msg);
-  const typingEl = showTyping();
-
-  try {
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        model: "claude-sonnet-4-6",
-        max_tokens: 1000,
-        system: botKnowledge,
-        messages: [{ role: "user", content: msg }]
-      })
-    });
-    const data = await response.json();
-    typingEl.remove();
-    const reply = data.content?.[0]?.text || "I'd love to help! Pop in and our team will answer everything in person 🧇";
-    addBotMsg(reply);
-    showQuickChips(['Best combo?', 'Prices?', 'How to find you?', 'Recommend something!']);
-  } catch (e) {
-    typingEl.remove();
-    addBotMsg("Oops, something went wrong on my end! Please visit us at Balakrishna Nagar, Kukatpally and we'll sort you out in person 🧇👑");
-  }
-}
-
-chatSend.addEventListener('click', () => sendMessage());
-chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(); });
+document.getElementById('chat-send').addEventListener('click',()=>sendChatMsg());
+chatInput.addEventListener('keydown',e=>{if(e.key==='Enter')sendChatMsg()});
 </script>
-
 </body>
 </html>
