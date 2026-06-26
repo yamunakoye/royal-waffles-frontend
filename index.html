@@ -408,17 +408,40 @@ let menuData={
 };
 
 let activeCategory='waffles';
+function normalizeMenuItems(raw){
+  if(Array.isArray(raw)){
+    const grouped={waffles:[],juices:[],combos:[]};
+    raw.forEach(item=>{
+      const normalized={
+        ...item,
+        desc:item.desc||item.description||'',
+      };
+      if(item.category==='juices')grouped.juices.push(normalized);
+      else if(item.category==='combos')grouped.combos.push(normalized);
+      else grouped.waffles.push(normalized);
+    });
+    return grouped;
+  }
+  if(raw && typeof raw==='object'){
+    return {
+      waffles:(raw.waffles||[]).map(i=>({...i,desc:i.desc||i.description||''})),
+      juices:(raw.juices||[]).map(i=>({...i,desc:i.desc||i.description||''})),
+      combos:(raw.combos||[]).map(i=>({...i,desc:i.desc||i.description||''})),
+    };
+  }
+  return menuData;
+}
 async function loadMenuData(){
   try{
     const res=await fetch(API+'/menu');
     if(!res.ok)throw new Error('Menu fetch failed');
     const json=await res.json();
     if(json?.success && json?.data){
-      menuData = json.data;
+      menuData = normalizeMenuItems(json.data);
     } else if(json?.data){
-      menuData = json.data;
+      menuData = normalizeMenuItems(json.data);
     } else if(json && typeof json === 'object' && (json.waffles || json.juices || json.combos)){
-      menuData = json;
+      menuData = normalizeMenuItems(json);
     } else {
       console.warn('Backend returned unexpected menu structure', json);
     }
@@ -433,12 +456,13 @@ async function initApp(){
 function filterMenu(cat,el){activeCategory=cat;document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');renderMenu()}
 function renderMenu(){
   const grid=document.getElementById('menu-grid');
-  grid.innerHTML=menuData[activeCategory].map((item,i)=>`
+  const items = Array.isArray(menuData[activeCategory]) ? menuData[activeCategory] : [];
+  grid.innerHTML=items.map((item,i)=>`
     <div class="menu-card" onclick="openItemModal('${activeCategory}',${i})">
       ${item.badge?`<span class="bestseller">${item.badge}</span>`:''}
       <div class="menu-emoji">${item.emoji}</div>
       <h4>${item.name}</h4>
-      <p>${item.desc}</p>
+      <p>${item.desc||item.description||''}</p>
       <span class="menu-price">${item.prices?`Pop ₹${item.prices.pop} / Pocket ₹${item.prices.pocket}`:`₹${item.price}`}</span>
       <button class="add-to-cart" onclick="event.stopPropagation();openItemModal('${activeCategory}',${i})">+</button>
     </div>
