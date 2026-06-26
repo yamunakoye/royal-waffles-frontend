@@ -140,13 +140,14 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(45,27,105,0.95);
 .stat-value{font-size:2rem;font-weight:700;color:var(--gold);margin-bottom:4px}
 .stat-label{color:rgba(255,255,255,.6);font-size:.85rem}
 .orders-table{background:rgba(255,255,255,.04);border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
-.orders-table-header{display:grid;grid-template-columns:1fr 1fr 2fr 1fr 1fr;gap:12px;padding:16px 20px;background:rgba(255,255,255,.06);font-size:.8rem;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px}
-.order-row{display:grid;grid-template-columns:1fr 1fr 2fr 1fr 1fr;gap:12px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.05);align-items:center}
+.orders-table-header{display:grid;grid-template-columns:1fr 1fr 2fr 2fr 1fr 1fr;gap:12px;padding:16px 20px;background:rgba(255,255,255,.06);font-size:.8rem;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px}
+.order-row{display:grid;grid-template-columns:1fr 1fr 2fr 2fr 1fr 1fr;gap:12px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.05);align-items:center}
 .order-row:last-child{border-bottom:none}
 .order-row:hover{background:rgba(255,255,255,.04)}
 .order-name{color:white;font-weight:600;font-size:.9rem}
 .order-phone{color:rgba(255,255,255,.6);font-size:.85rem}
 .order-items-text{color:rgba(255,255,255,.7);font-size:.82rem}
+.order-address{color:rgba(255,255,255,.7);font-size:.82rem;white-space:pre-line}
 .order-amount{color:var(--gold);font-weight:700}
 .status-badge{padding:4px 12px;border-radius:50px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;border:none;font-family:'Poppins',sans-serif}
 .status-placed{background:rgba(245,166,35,.2);color:var(--gold)}
@@ -623,12 +624,13 @@ async function loadAdminData(){
       const rows=orders.data;
       if(rows.length===0){document.getElementById('orders-table').innerHTML='<div class="no-orders">📭 No orders yet! Share your website and orders will appear here.</div>';return}
       document.getElementById('orders-table').innerHTML=`
-        <div class="orders-table-header"><span>Customer</span><span>Phone</span><span>Items</span><span>Amount</span><span>Status</span></div>
+        <div class="orders-table-header"><span>Customer</span><span>Phone</span><span>Items</span><span>Delivery Address</span><span>Amount</span><span>Status</span></div>
         ${rows.map(o=>`
           <div class="order-row">
             <div class="order-name">${o.customerName}</div>
             <div class="order-phone">${o.customerPhone}</div>
             <div class="order-items-text">${o.items.map(i=>i.name+' x'+i.quantity).join(', ')}</div>
+            <div class="order-address">${o.address || '—'}</div>
             <div class="order-amount">₹${o.totalAmount}</div>
             <button class="status-badge status-${o.status}" onclick="updateStatus('${o._id}','${o.status}')">${o.status}</button>
           </div>
